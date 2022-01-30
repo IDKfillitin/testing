@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <!-- Error message --> 
+  <category>
+    <pattern>* *</pattern>
+    <template>I'm sorry is that a foreign language? I do not understand that. Please answer in english.</template>
+  </category>
+  <!--Starts the conversation-->
+  <category>
+      <pattern>*</pattern>
+      <template> Welcome to gradbot are you looking for career advice? Type "yes" to start</template>
+  </category>
+  
+  <category>
+      <pattern>Yes</pattern>
+      <template>Awesome lets get started. What is your name? Respond with "My name is ..."</template>
+  </category>
+  
+  <category>
+      <pattern> my name is * </pattern>
+      <template> Hello <set name="firstname"><star/></set> ! Lets find the perfect career for you! Sounds Good? To continue please type "sounds great"</template> 
+  </category>
+  
+  <category>
+      <pattern> sounds great </pattern>
+      <template> Ok first lets get to know you first. What are you currently majoring in?
+                <button>
+                    <text>engineering</text>
+                    <postback>engineering</postback>
+                </button>
+                <button>
+                    <text>Computer Science</text>
+                    <postback>therightone</postback>
+                </button>
+                <button>
+                    <text>math</text>
+                    <postback>engineering</postback>
+                </button>
+                <button>
+                    <text>non STEM major</text>
+                    <postback>engineering</postback>
+                </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>engineering</pattern>
+      <template> Take this test to see which career would fit you best.<button>
+                    <text>The test</text>
+                    <postback>engineering</postback>
+                </button></template>
+  </category>
+  
+  <category>
+       <pattern> therightone</pattern>
+       <template> That is impressive. What subject do you like the most in your major?
+       <carousel>
+           <card>
+               <image>https://predictabledesigns.com/wp-content/uploads/2020/06/FeaturedImage-1.jpg</image>
+               <title></title>
+               <subtitle></subtitle>
+               <button>
+                   <text>Operating systems</text>
+                   <postback>Operating systems</postback>
+               </button>
+           </card>
+            <card>
+               <image>https://www.strategic.com/wp-content/uploads/2020/11/DataManagement.jpg</image>
+               <title></title>
+               <subtitle></subtitle>
+               <button>
+                   <text>Data Management</text>
+                   <postback>data management 1</postback>
+               </button>
+           </card>
+            <card>
+               <image>https://www.susla.edu/assets/susla/images/WebDevelopmentImage.jpeg</image>
+               <title></title>
+               <subtitle></subtitle>
+               <button>
+                   <text>Web Development</text>
+                   <postback>web development 1</postback>
+               </button>
+           </card>
+           <card>
+               <image>https://universityofreston.com/wp-content/uploads/2020/09/CX2-1.jpg</image>
+               <title></title>
+               <subtitle></subtitle>
+               <button>
+                   <text>Machine Learning</text>
+                   <postback>machine learning 1</postback>
+               </button>
+           </card>
+           <card>
+               <image>https://miro.medium.com/max/640/1*A2X0FaO48D1tv4HpuKUdkg.jpeg</image>
+               <title></title>
+               <subtitle></subtitle>
+               <button>
+                   <text>Network Security</text>
+                   <postback>network security 1</postback>
+               </button>
+           </card>
+       </carousel>
+       </template>
+  </category>
+  
+  <category> 
+  <pattern>Operating systems</pattern>
+  <template>After careful deliberation the perfect career for you is IT systems administrator
+  <button>
+      <text>Learn more!</text>
+      <url>https://www.coursera.org/articles/what-is-a-system-administrator-a-career-guide</url>
+  </button>
+  </template>
+  </category>
+  
+   <category> 
+  <pattern>data management 1</pattern>
+  <template>After careful deliberation the perfect career for you is IT systems administrator
+  <button>
+      <text>Learn more!</text>
+      <url>https://www.indeed.com/hire/job-description/data-manager#:~:text=A%20Data%20Manager%2C%20or%20Data,tasks%2C%20and%20networking%20with%20clients.</url>
+  </button>
+  </template>
+  </category>
+  
+ <category> 
+  <pattern>web development 1</pattern>
+  <template>After careful deliberation the perfect career for you is IT systems administrator
+  <button>
+      <text>Learn more!</text>
+      <url>https://hiring.monster.com/resources/job-descriptions/computer/web-developer/#:~:text=Web%20Developer%20Job%20Responsibilities%3A,friendly%20design%20and%20clear%20navigation.</url>
+  </button>
+  </template>
+  </category>
+  
+   <category> 
+  <pattern>machine learning 1</pattern>
+  <template>After careful deliberation the perfect career for you is IT systems administrator
+  <button>
+      <text>Learn more!</text>
+      <url>https://www.betterteam.com/machine-learning-engineer-job-description#:~:text=Machine%20learning%20engineers%20develop%20self,and%20resolve%20data%20set%20problems.</url>
+  </button>
+  </template>
+  </category>
+  
+  
+   <category> 
+  <pattern>network security 1</pattern>
+  <template>After careful deliberation the perfect career for you is IT systems administrator
+  <button>
+      <text>Learn more!</text>
+      <url>https://www.fieldengineer.com/blogs/network-security-engineer-job#:~:text=The%20network%20security%20job%20is,natural%20disasters%20and%20hacker%20attacks.</url>
+  </button>
+  </template>
+  </category>
+  
+</aiml>
